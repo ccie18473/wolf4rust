@@ -6,20 +6,20 @@
 
 This port is based on Wolf4SDL by Moritz "Ripper" Kroll ans others.
 
-* [Wolf4SDL] (https://github.com/11001011101001011/Wolf4SDL)
+* [Wolf4SDL](https://github.com/11001011101001011/Wolf4SDL)
 
 Original Wolfenstein 3D by id Software:
 
-* [Wolfenstein 3D] (https://github.com/id-Software/wolf3d)
+* [Wolfenstein 3D](https://github.com/id-Software/wolf3d)
 
 This books helps understanding many of the internals of the original game:
 
-* [Game Engine Black Book: Wolfeinstein 3D 2nd Edition] (https://fabiensanglard.net/gebbwolf3d/)
+* [Game Engine Black Book: Wolfeinstein 3D 2nd Edition](https://fabiensanglard.net/gebbwolf3d/)
 
 ## Dependencies
 
 * [Rust-SDL2](https://github.com/Rust-SDL2/rust-sdl2)
-* [ADPlug] (https://github.com/adplug/adplug)
+* [ADPlug](https://github.com/adplug/adplug)
 
 
 ## Build and run
