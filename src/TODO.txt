@@ -1,0 +1,9 @@
+get psyched (goto issue)
+level completed (goto issue)
+
+keycode/scancode
+
+readconfig/writeconfig
+loadgame/savegame
+
+finish US_LineInput
