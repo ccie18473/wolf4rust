@@ -4,7 +4,7 @@
 
 ![](wolf4rust.jpg)
 
-This port is based on Wolf4SDL by Moritz "Ripper" Kroll ans others.
+This port is based on Wolf4SDL by Moritz "Ripper" Kroll and others.
 
 * [Wolf4SDL](https://github.com/11001011101001011/Wolf4SDL)
 
@@ -12,7 +12,7 @@ Original Wolfenstein 3D by id Software:
 
 * [Wolfenstein 3D](https://github.com/id-Software/wolf3d)
 
-This books helps understanding many of the internals of the original game:
+This book helps understanding many of the internals of the original game:
 
 * [Game Engine Black Book: Wolfeinstein 3D 2nd Edition](https://fabiensanglard.net/gebbwolf3d/)
 
@@ -27,25 +27,31 @@ This books helps understanding many of the internals of the original game:
 ### Install SDL2/SDL2-Mixer:
 
 sudo apt install libsdl2-dev
+
 sudo apt install libsdl2-mixer-dev
 
 ### Compile and install fmopl:
 
 $ cd src/mame
+
 $ cc -c fmopl.c
 
 Create Dynamic lib
+
 $ cc -shared fmopl.o -o libfmopl.so
 
 Create Static lib
+
 $ ar rcs libfmopl.a fmopl.o
 
 ### Ubuntu Installation
 cp libfmopl.so /usr/lib/x86_64-linux-gnu
+
 cp libfmopl.a /usr/lib/x86_64-linux-gnu
 
 ### CentOS Installation
 cp libfmopl.so /usr/lib/
+
 cp libfmopl.a /usr/lib/
 
 
