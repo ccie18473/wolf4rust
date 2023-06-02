@@ -40,13 +40,13 @@ $ cc -shared fmopl.o -o libfmopl.so
 Create Static lib
 $ ar rcs libfmopl.a fmopl.o
 
-Ubuntu Installation
-# cp libfmopl.so /usr/lib/x86_64-linux-gnu
-# cp libfmopl.a /usr/lib/x86_64-linux-gnu
+### Ubuntu Installation
+cp libfmopl.so /usr/lib/x86_64-linux-gnu
+cp libfmopl.a /usr/lib/x86_64-linux-gnu
 
-CentOS Installation
-# cp libfmopl.so /usr/lib/
-# cp libfmopl.a /usr/lib/
+### CentOS Installation
+cp libfmopl.so /usr/lib/
+cp libfmopl.a /usr/lib/
 
 
 ### In Cargo, choose feature UPLOAD or GOODTIMES depending if you have the WL1 or WL6 files
