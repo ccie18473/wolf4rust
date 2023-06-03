@@ -28,7 +28,11 @@ This book helps understanding many of the internals of the original game:
 
 #### Ubuntu
 
+sudo apt install libsdl2-2.0-0
+
 sudo apt install libsdl2-dev
+
+sudo apt install libsdl2-mixer-2.0-0
 
 sudo apt install libsdl2-mixer-dev
 
