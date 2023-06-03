@@ -2278,7 +2278,7 @@ pub fn Think(w3d: &mut modules, ob: &mut object, think: bool) {
             }
         }
         s_bossshoot8 => {
-            ob.objlist[ob.objlist_i].state = s_bossshoot1;
+            ob.objlist[ob.objlist_i].state = s_bosschase1;
         }
         s_gretelstand => {
             if think {
