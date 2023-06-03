@@ -26,9 +26,19 @@ This book helps understanding many of the internals of the original game:
 
 ### Install SDL2/SDL2-Mixer:
 
+#### Ubuntu
+
 sudo apt install libsdl2-dev
 
 sudo apt install libsdl2-mixer-dev
+
+#### CentOS
+
+Download and install these packages:
+
+SDL2_mixer-2.0.4-8.el8.remi.x86_64.rpm 
+
+SDL2_mixer-devel-2.0.4-8.el8.remi.x86_64.rpm 
 
 ### Compile and install fmopl:
 
