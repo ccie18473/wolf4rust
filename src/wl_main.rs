@@ -1185,28 +1185,32 @@ pub fn CheckParameters(w3d: &mut modules) {
             w3d.id_vl.fullscreen = false;
             w3d.id_in.forcegrabmouse = true;
         } else if argv[i] == "--res" {
-            if i + 2 >= argc {
+            i +=2;
+            if i >= argc {
                 println!("The res option needs the width and/or the height argument!");
                 hasError = true;
             } else {
-                w3d.id_vl.screenWidth = argv[i + 1].parse().unwrap_or(640);
-                w3d.id_vl.screenHeight = argv[i + 1].parse().unwrap_or(400);
-                let factor = { w3d.id_vl.screenWidth / 320 };
-                if ({ w3d.id_vl.screenWidth % 320 >= 1 })
-                    || ({ w3d.id_vl.screenHeight != 200 * factor })
-                        && ({ w3d.id_vl.screenHeight != 240 * factor })
+                w3d.id_vl.screenWidth = argv[i - 1].parse().unwrap_or(640);
+                println!("width:{}", w3d.id_vl.screenWidth);
+                w3d.id_vl.screenHeight = argv[i].parse().unwrap_or(400);
+                println!("height:{}", w3d.id_vl.screenHeight);
+                let factor = w3d.id_vl.screenWidth / 320;
+                if (w3d.id_vl.screenWidth % 320 != 0)
+                    || (w3d.id_vl.screenHeight != 200 * factor)
+                        && (w3d.id_vl.screenHeight != 240 * factor)
                 {
                     println!("Screen size must be a multiple of 320x200 or 320x240!");
                     hasError = true;
                 }
             }
         } else if argv[i] == "--resf" {
-            if i + 2 >= argc {
+            i +=2;
+            if i >= argc {
                 println!("The resf option needs the width and/or the height argument!");
                 hasError = true;
             } else {
-                w3d.id_vl.screenWidth = argv[i + 1].parse().unwrap_or(640);
-                w3d.id_vl.screenHeight = argv[i + 1].parse().unwrap_or(400);
+                w3d.id_vl.screenWidth = argv[i - 1].parse().unwrap_or(640);
+                w3d.id_vl.screenHeight = argv[i].parse().unwrap_or(400);
                 if w3d.id_vl.screenWidth < 320 {
                     println!("Screen width must be at least 320!");
                     hasError = true;
@@ -1237,21 +1241,22 @@ pub fn CheckParameters(w3d: &mut modules) {
             }
         } else if argv[i] == "--nodblbuf" {
             w3d.id_vl.usedoublebuffering = false
-        } else if argv[i] == "--w3d.wl_play.extravbls" {
+        } else if argv[i] == "--extravbls" {
             i += 1;
             if i >= argc {
-                println!("The w3d.wl_play.extravbls option is missing the vbls argument!");
+                println!("The extravbls option is missing the vbls argument!");
                 hasError = true;
             } else {
                 w3d.wl_play.extravbls = argv[i].parse().unwrap_or(0);
 
                 if w3d.wl_play.extravbls < 0 {
-                    println!("w3d.wl_play.extravbls must be positive!");
+                    println!("Extravbls must be positive!");
                     hasError = true;
                 }
             }
         } else if argv[i] == "--joystick" {
-            if i + 1 >= argc {
+            i +=1;
+            if i >= argc {
                 println!("The joystick option is missing the index argument!");
                 hasError = true;
             } else {
@@ -1357,7 +1362,7 @@ pub fn CheckParameters(w3d: &mut modules) {
             print!("                        (use this when you have palette/fading problems\n");
             print!("                        allowed: 8, 16, 24, 32, default: \"best\" depth)\n");
             print!(" --nodblbuf             Don't use SDL's double buffering\n");
-            print!(" --w3d.wl_play.extravbls <vbls>     Sets a delay after each frame, which may help to\n");
+            print!(" --extravbls <vbls>     Sets a delay after each frame, which may help to\n");
             print!(
                 "                        reduce flickering (unit is currently 8 ms, default: 0)\n"
             );
