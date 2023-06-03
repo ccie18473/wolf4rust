@@ -36,9 +36,9 @@ sudo apt install libsdl2-mixer-dev
 
 Download and install these packages:
 
-SDL2_mixer-2.0.4-8.el8.remi.x86_64.rpm 
+SDL2_mixer.x86_64
 
-SDL2_mixer-devel-2.0.4-8.el8.remi.x86_64.rpm 
+SDL2_mixer-devel.x86_64 
 
 ### Compile and install fmopl:
 
