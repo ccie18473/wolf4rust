@@ -34,11 +34,13 @@ sudo apt install libsdl2-mixer-dev
 
 #### CentOS
 
-Download and install these packages:
+sudo dnf --enablerepo=powertools install SDL2
 
-SDL2_mixer.x86_64
+sudo dnf --enablerepo=powertools install SDL2-devel
 
-SDL2_mixer-devel.x86_64 
+sudo dnf --enablerepo=powertools install SDL2_mixer
+
+sudo dnf --enablerepo=powertools install SDL2_mixer-devel
 
 ### Compile and install fmopl:
 
