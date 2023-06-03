@@ -14,7 +14,7 @@ Original Wolfenstein 3D by id Software:
 
 This book helps understanding many of the internals of the original game:
 
-* [Game Engine Black Book: Wolfeinstein 3D 2nd Edition](https://fabiensanglard.net/gebbwolf3d/)
+* [Game Engine Black Book: Wolfenstein 3D 2nd Edition](https://fabiensanglard.net/gebbwolf3d/)
 
 ## Dependencies
 
