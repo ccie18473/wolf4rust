@@ -140,6 +140,8 @@ cargo run --release -- --easy --tedlevel 58
 
 ![](tedlevel-48.png)
 
+![](tedlevel-58.png)
+
 ## Limitations
 
 Use X11 instead of Wayland. SDL2 set_relative_mouse_mode doesn't work with Wayland.
