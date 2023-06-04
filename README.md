@@ -128,7 +128,7 @@ cargo run --release -- --easy --tedlevel 58
 | Ctrl                 | `Fire`            |
 | Space Bar            | `Open Doors`      |
 
-## Screenshots
+## Screenshots (BOSS Levels)
 
 ![](tedlevel-8.png)
 
@@ -137,6 +137,8 @@ cargo run --release -- --easy --tedlevel 58
 ![](tedlevel-28.png)
 
 ![](tedlevel-38.png)
+
+![](tedlevel-48.png)
 
 ## Limitations
 
