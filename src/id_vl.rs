@@ -48,12 +48,19 @@ impl<'a> id_vl<'a> {
         ///////////////////////////////////////////////////////
         let timer = sdl_context.timer().unwrap();
         ///////////////////////////////////////////////////////
+        // BUG
+        // Need to get these from CheckParameters (--res, --resf)
+        // You can use multiple of 320 x 200
+        // 640 x 400
+        // 1280 x 800
+        // 1920 x 1200
+        // The window is made resizable but not sure if it will cause problems
         let screenWidth: i32 = 640;
         let screenHeight: i32 = 400;
         ///////////////////////////////////////////////////////
         let title: String;
         {
-            title = "Wolfenstein 3D (Rust) ".to_string();
+            title = "Wolfenstein 3D (Rust)".to_string();
         }
         ///////////////////////////////////////////////////////
         let video_subsystem = sdl_context.video().unwrap();
