@@ -4,7 +4,7 @@
 
 ![](wolf4rust.jpg)
 
-This port is based on Wolf4SDL by Moritz "Ripper" Kroll and others.
+This port is based on Wolf4SDL by Moritz "Ripper" Kroll and others:
 
 * [Wolf4SDL](https://github.com/11001011101001011/Wolf4SDL)
 
@@ -71,9 +71,9 @@ $ ar rcs libfmopl.a fmopl.o
 \# cp libfmopl.a /usr/lib/
 
 
-### In Cargo, choose feature UPLOAD or GOODTIMES depending if you have the WL1 or WL6 files
+### In Cargo, choose feature UPLOAD or GOODTIMES depending if you have the WL1 or WL6 files:
 
-WL1 Files (Episode 1 Shareware):
+WL1 Files (Episode 1 Shareware provided here):
 
 audiot.wl1
 config.wl1
@@ -102,12 +102,12 @@ cargo run --release
 
 BOSS Levels:
 
-cargo run -- --easy --tedlevel 8
-cargo run -- --easy --tedlevel 18
-cargo run -- --easy --tedlevel 28
-cargo run -- --easy --tedlevel 38
-cargo run -- --easy --tedlevel 48
-cargo run -- --easy --tedlevel 58
+cargo run --release -- --easy --tedlevel 8
+cargo run --release -- --easy --tedlevel 18
+cargo run --release -- --easy --tedlevel 28
+cargo run --release -- --easy --tedlevel 38
+cargo run --release -- --easy --tedlevel 48
+cargo run --release -- --easy --tedlevel 58
 
 ```
 
@@ -127,6 +127,10 @@ cargo run -- --easy --tedlevel 58
 | Alt + Right Arrow    | `Strafe Right`    |
 | Ctrl                 | `Fire`            |
 | Space Bar            | `Open Doors`      |
+
+## Screenshots
+
+![](tedlevel-8.png)
 
 ## Limitations
 
