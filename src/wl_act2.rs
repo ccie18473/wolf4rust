@@ -1423,7 +1423,7 @@ pub const s_ssdie4: statetype = statetype {
 };
 
 //
-// hans
+// hans - EPISODE 1 BOSS
 //
 
 //statetype s_bossstand           = {false,SPR_BOSS_W1,0,(statefunc)T_Stand,NULL,&s_bossstand};
@@ -1606,7 +1606,7 @@ pub const s_bossshoot8: statetype = statetype {
 };
 
 //
-// gretel
+// gretel - EPISODE 5 BOSS
 //
 
 //statetype s_gretelstand         = {false,SPR_GRETEL_W1,0,(statefunc)T_Stand,NULL,&s_gretelstand};
@@ -1789,7 +1789,7 @@ pub const s_gretelshoot8: statetype = statetype {
 };
 
 //
-// schabb
+// schabb - EPISODE 2 BOSS
 //
 
 //statetype s_schabbstand         = {false,SPR_SCHABB_W1,0,(statefunc)T_Stand,NULL,&s_schabbstand};
@@ -1985,7 +1985,7 @@ pub const s_needle4: statetype = statetype {
 };
 
 //
-// gift
+// gift - EPISODE 4 BOSS
 //
 
 //statetype s_giftstand           = {false,SPR_GIFT_W1,0,(statefunc)T_Stand,NULL,&s_giftstand};
@@ -2142,8 +2142,8 @@ pub const s_giftshoot2: statetype = statetype {
     id: 210,
 };
 
-//
-// schabb
+// 
+// fat - EPISODE 6 BOSS
 //
 
 //statetype s_fatstand            = {false,SPR_FAT_W1,0,(statefunc)T_Stand,NULL,&s_fatstand};
@@ -2337,7 +2337,7 @@ pub const s_fatshoot6: statetype = statetype {
 };
 
 //
-// fake
+// fake - EPISODE 3 BOSS1
 //
 
 //statetype s_fakestand           = {false,SPR_FAKE_W1,0,(statefunc)T_Stand,NULL,&s_fakestand};
@@ -2571,7 +2571,7 @@ pub const s_fire2: statetype = statetype {
 };
 
 //
-// hitler
+// hitler - EPISODE 3 BOSS2
 //
 
 //statetype s_mechastand          = {false,SPR_MECHA_W1,0,(statefunc)T_Stand,NULL,&s_mechastand};
@@ -2734,6 +2734,10 @@ pub const s_mechashoot6: statetype = statetype {
     action: true,
     id: 271,
 };
+
+//
+// hitler - EPISODE 3 BOSS3
+//
 
 //statetype s_hitlerchase1        = {false,SPR_HITLER_W1,6,(statefunc)T_Chase,NULL,&s_hitlerchase1s};
 //statetype s_hitlerchase1s       = {false,SPR_HITLER_W1,4,NULL,NULL,&s_hitlerchase2};

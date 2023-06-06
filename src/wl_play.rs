@@ -2592,14 +2592,14 @@ pub fn Think(w3d: &mut modules, ob: &mut object, think: bool) {
         }
         s_fatchase2 => {
             if think {
-                T_Gift(w3d, ob);
+                T_Fat(w3d, ob);
             } else {
                 ob.objlist[ob.objlist_i].state = s_fatchase3;
             }
         }
         s_fatchase3 => {
             if think {
-                T_Gift(w3d, ob);
+                T_Fat(w3d, ob);
             } else {
                 ob.objlist[ob.objlist_i].state = s_fatchase3s;
             }
@@ -2609,7 +2609,7 @@ pub fn Think(w3d: &mut modules, ob: &mut object, think: bool) {
         }
         s_fatchase4 => {
             if think {
-                T_Gift(w3d, ob);
+                T_Fat(w3d, ob);
             } else {
                 ob.objlist[ob.objlist_i].state = s_fatchase1;
             }
