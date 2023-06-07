@@ -113,20 +113,21 @@ cargo run --release -- --easy --tedlevel 58
 
 ## Controls
 
-| Key(s)               | Action            |
-| -------------------- | ----------------- |
-| Up Arrow             | `Move Forward`    |
-| Down Arrow           | `Move Backward`   |
-| Left Arrow           | `Turn Left`       |
-| Right Arrow          | `Turn Right`      |
-| Shift + Up Arrow     | `Run Forward`     |
-| Shift + Down Arrow   | `Run Backward`    |
-| Shift + Left Arrow   | `Fast Left Turn`  |
-| Shift + Right Arrow  | `Fast Right Turn` |
-| Alt + Left Arrow     | `Strafe Left`     |
-| Alt + Right Arrow    | `Strafe Right`    |
-| Ctrl                 | `Fire`            |
-| Space Bar            | `Open Doors`      |
+| Key(s)               | Action                  |
+| -------------------- | ----------------------- |
+| Up Arrow             | `Move Forward`          |
+| Down Arrow           | `Move Backward`         |
+| Left Arrow           | `Turn Left`             |
+| Right Arrow          | `Turn Right`            |
+| Shift + Up Arrow     | `Run Forward`           |
+| Shift + Down Arrow   | `Run Backward`          |
+| Shift + Left Arrow   | `Fast Left Turn`        |
+| Shift + Right Arrow  | `Fast Right Turn`       |
+| Alt + Left Arrow     | `Strafe Left`           |
+| Alt + Right Arrow    | `Strafe Right`          |
+| Ctrl                 | `Fire`                  |
+| Space Bar            | `Open Doors`            |
+| F12                  | `Capture/Release Mouse` |
 
 ## Screenshots (BOSS Levels)
 
@@ -145,9 +146,12 @@ cargo run --release -- --easy --tedlevel 58
 ## Limitations
 
 Use X11 instead of Wayland. SDL2 set_relative_mouse_mode doesn't work with Wayland.
+
 If you use VMWare, set vmmouse.present = "FALSE", otherwise set_relative_mouse_mode doesn't work properly.
 
 https://github.com/libsdl-org/SDL/issues/1836
+
+If you use VirtualBox, you need to capture the Mouse with Input/Mouse Integration.
 
 ## Author
 
