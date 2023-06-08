@@ -46,6 +46,12 @@ sudo dnf --enablerepo=powertools install SDL2_mixer
 
 sudo dnf --enablerepo=powertools install SDL2_mixer-devel
 
+#### macOS
+
+brew install sdl2
+
+brew install sdl2_mixer
+
 ### Compile and install fmopl:
 
 $ cd src/mame
@@ -61,14 +67,22 @@ Create Static lib
 $ ar rcs libfmopl.a fmopl.o
 
 #### Ubuntu
+
 \# cp libfmopl.so /usr/lib/x86_64-linux-gnu
 
 \# cp libfmopl.a /usr/lib/x86_64-linux-gnu
 
 #### CentOS
+
 \# cp libfmopl.so /usr/lib/
 
 \# cp libfmopl.a /usr/lib/
+
+#### macOS
+
+\# cp libfmopl.so /usr/local/lib/
+
+\# cp libfmopl.a /usr/local/lib/
 
 
 ### In Cargo, choose feature UPLOAD or GOODTIMES depending if you have the WL1 or WL6 files:
