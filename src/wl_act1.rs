@@ -724,13 +724,24 @@ pub fn CloseDoor(w3d: &mut modules, ob: &mut object, door: i32) {
             }
         }
         check = ob.actorat[tilex as usize - 1][tiley as usize];
-
+        if !check.is_null() {
+            //it's a value, not a pointer
+            if check < 65535 as *mut objtype {
+                return;
+            }
+        }
         if !check.is_null()
             && ((unsafe { (*check).x } + MINDIST as i32) >> TILESHIFT) == tilex as i32
         {
             return;
         }
         check = ob.actorat[tilex as usize + 1][tiley as usize];
+        if !check.is_null() {
+            //it's a value, not a pointer
+            if check < 65535 as *mut objtype {
+                return;
+            }
+        }
         if !check.is_null()
             && ((unsafe { (*check).x } - MINDIST as i32) >> TILESHIFT) == tilex as i32
         {
@@ -746,13 +757,24 @@ pub fn CloseDoor(w3d: &mut modules, ob: &mut object, door: i32) {
             }
         }
         check = ob.actorat[tilex as usize][tiley as usize - 1];
-
+        if !check.is_null() {
+            //it's a value, not a pointer
+            if check < 65535 as *mut objtype {
+                return;
+            }
+        }
         if !check.is_null()
             && ((unsafe { (*check).y } + MINDIST as i32) >> TILESHIFT) == tiley as i32
         {
             return;
         }
         check = ob.actorat[tilex as usize][tiley as usize + 1];
+        if !check.is_null() {
+            //it's a value, not a pointer
+            if check < 65535 as *mut objtype {
+                return;
+            }
+        }
         if !check.is_null()
             && ((unsafe { (*check).y } - MINDIST as i32) >> TILESHIFT) == tiley as i32
         {
@@ -780,7 +802,6 @@ pub fn CloseDoor(w3d: &mut modules, ob: &mut object, door: i32) {
     //
 
     ob.actorat[tilex as usize][tiley as usize] = (door | BIT_DOOR as i32) as *mut objtype;
-    // consider it a solid wall;
 }
 
 /*
