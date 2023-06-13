@@ -18,7 +18,7 @@ default-features = false
 features = ["mixer"]
 
 [features]
-default = ["GOODTIMES"]
+default = ["UPLOAD"]
 
 # Wolf3d Shareware v1.4, WL1 Files
 UPLOAD = []
