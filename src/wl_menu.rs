@@ -3478,7 +3478,7 @@ pub fn ReadAnyControl(w3d: &mut modules, ci: &mut ControlInfo) {
     if w3d.wl_play.joystickenabled != 0 && mouseactive == 0 {
         let mut jx: i16 = 0;
         let mut jy: i16 = 0;
-        let jb: i32 ;
+        let jb: i32;
 
         IN_GetJoyDelta(w3d, &mut jx, &mut jy);
 

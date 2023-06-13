@@ -491,7 +491,8 @@ pub fn FizzleFade(
                         //    + (x1 + x) as usize * bytes] = fullcol as u8;
 
                         w3d.id_vl.screen.with_lock_mut(|dest: &mut [u8]| {
-                            let offset = (y1 + y) as usize * screen_pitch as usize + (x1 + x) as usize * bytes;
+                            let offset = (y1 + y) as usize * screen_pitch as usize
+                                + (x1 + x) as usize * bytes;
                             dest[offset] = fullcol1;
                             dest[offset + 1] = fullcol2;
                             dest[offset + 2] = fullcol3;

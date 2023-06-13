@@ -1051,7 +1051,7 @@ pub fn DrawPlayerWeapon(w3d: &mut modules, ob: &mut object) {
 
     if w3d.wl_game.gamestate.victoryflag {
         let time = GetTimeCount(w3d) & 32;
-        if ob.objlist[0].state == s_deathcam && time !=0 {
+        if ob.objlist[0].state == s_deathcam && time != 0 {
             SimpleScaleShape(
                 w3d,
                 w3d.wl_main.viewwidth / 2,

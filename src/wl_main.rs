@@ -1185,7 +1185,7 @@ pub fn CheckParameters(w3d: &mut modules) {
             w3d.id_vl.fullscreen = false;
             w3d.id_in.forcegrabmouse = true;
         } else if argv[i] == "--res" {
-            i +=2;
+            i += 2;
             if i >= argc {
                 println!("The res option needs the width and/or the height argument!");
                 hasError = true;
@@ -1204,7 +1204,7 @@ pub fn CheckParameters(w3d: &mut modules) {
                 }
             }
         } else if argv[i] == "--resf" {
-            i +=2;
+            i += 2;
             if i >= argc {
                 println!("The resf option needs the width and/or the height argument!");
                 hasError = true;
@@ -1255,7 +1255,7 @@ pub fn CheckParameters(w3d: &mut modules) {
                 }
             }
         } else if argv[i] == "--joystick" {
-            i +=1;
+            i += 1;
             if i >= argc {
                 println!("The joystick option is missing the index argument!");
                 hasError = true;

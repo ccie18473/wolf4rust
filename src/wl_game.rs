@@ -755,7 +755,7 @@ pub fn SetupGameLevel(w3d: &mut modules, ob: &mut object) {
                     tile = map[map_i - 2] as i32;
                 }
 
-                map[map_i - 1] = tile as u16;
+                w3d.id_ca.mapsegs[0][map_i - 1] = tile as u16;
             }
         }
     }

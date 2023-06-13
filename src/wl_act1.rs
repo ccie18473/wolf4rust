@@ -894,15 +894,10 @@ pub fn DoorOpening(w3d: &mut modules, ob: &mut object, door: i32) {
         area1 -= AREATILE;
         area2 -= AREATILE;
 
-        // BUG in tedlevel 53
-        if door == 17 && area2 == -1 {
-            area2 = 18;
-        }
-
         if area1 < NUMAREAS && area2 < NUMAREAS {
             w3d.wl_act1.areaconnect[area1 as usize][area2 as usize] += 1;
             w3d.wl_act1.areaconnect[area2 as usize][area1 as usize] += 1;
-            
+
             if ob.objlist[0].areanumber < NUMAREAS {
                 ConnectAreas(w3d, ob);
             }
@@ -992,11 +987,6 @@ pub fn DoorClosing(w3d: &mut modules, ob: &mut object, door: i32) {
         }
         area1 -= AREATILE;
         area2 -= AREATILE;
-
-        // BUG in tedlevel 53
-        if door == 17 && area2 == -1 {
-            area2 = 18;
-        }
 
         if area1 < NUMAREAS && area2 < NUMAREAS {
             w3d.wl_act1.areaconnect[area1 as usize][area2 as usize] -= 1;

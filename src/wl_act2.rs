@@ -2142,7 +2142,7 @@ pub const s_giftshoot2: statetype = statetype {
     id: 210,
 };
 
-// 
+//
 // fat - EPISODE 6 BOSS
 //
 
