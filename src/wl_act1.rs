@@ -480,7 +480,6 @@ pub fn PlaceItemType(w3d: &mut modules, itemtype: i32, tilex: i32, tiley: i32) {
 
     let mut Type: i32;
     let mut spot: statobj_t;
-
     //
     // find the item number
     //
@@ -781,7 +780,6 @@ pub fn CloseDoor(w3d: &mut modules, ob: &mut object, door: i32) {
             return;
         }
     }
-
     //
     // play door sound if in a connected area
     //
@@ -800,7 +798,6 @@ pub fn CloseDoor(w3d: &mut modules, ob: &mut object, door: i32) {
     //
     // make the door space solid
     //
-
     ob.actorat[tilex as usize][tiley as usize] = (door | BIT_DOOR as i32) as *mut objtype;
 }
 
@@ -882,8 +879,6 @@ pub fn DoorOpening(w3d: &mut modules, ob: &mut object, door: i32) {
         //
         // door is just starting to open, so connect the areas
         //
-
-        //map = MAPSPOT(id,wl,w3d.wl_act1.doorobjlist[door as usize].tilex,w3d.wl_act1.doorobjlist[door as usize].tiley,0) as i32;
         map = w3d.id_ca.mapsegs[0].clone(); //plane 0
         map_i = ((w3d.wl_act1.doorobjlist[door as usize].tiley << MAPSHIFT)
             + w3d.wl_act1.doorobjlist[door as usize].tilex) as usize;
@@ -895,13 +890,19 @@ pub fn DoorOpening(w3d: &mut modules, ob: &mut object, door: i32) {
             area1 = map[map_i - w3d.wl_play.mapwidth as usize] as i32;
             area2 = map[map_i + w3d.wl_play.mapwidth as usize] as i32;
         }
+
         area1 -= AREATILE;
         area2 -= AREATILE;
+
+        // BUG in tedlevel 53
+        if door == 17 && area2 == -1 {
+            area2 = 18;
+        }
 
         if area1 < NUMAREAS && area2 < NUMAREAS {
             w3d.wl_act1.areaconnect[area1 as usize][area2 as usize] += 1;
             w3d.wl_act1.areaconnect[area2 as usize][area1 as usize] += 1;
-            //player=ob.objlist[0]:
+            
             if ob.objlist[0].areanumber < NUMAREAS {
                 ConnectAreas(w3d, ob);
             }
@@ -916,7 +917,6 @@ pub fn DoorOpening(w3d: &mut modules, ob: &mut object, door: i32) {
             }
         }
     }
-
     //
     // slide the door by an adaptive amount
     //
@@ -966,7 +966,6 @@ pub fn DoorClosing(w3d: &mut modules, ob: &mut object, door: i32) {
     };
 
     position = w3d.wl_act1.doorposition[door as usize];
-
     //
     // slide the door by an adaptive amount
     //
@@ -980,7 +979,6 @@ pub fn DoorClosing(w3d: &mut modules, ob: &mut object, door: i32) {
 
         w3d.wl_act1.doorobjlist[door as usize].action = doortype::dr_closed;
 
-        //map = &MAPSPOT(doorobjlist[door].tilex,doorobjlist[door].tiley,0);
         map = w3d.id_ca.mapsegs[0].clone(); //plane 0
         map_i = ((w3d.wl_act1.doorobjlist[door as usize].tiley << MAPSHIFT)
             + w3d.wl_act1.doorobjlist[door as usize].tilex) as usize;
@@ -995,11 +993,15 @@ pub fn DoorClosing(w3d: &mut modules, ob: &mut object, door: i32) {
         area1 -= AREATILE;
         area2 -= AREATILE;
 
+        // BUG in tedlevel 53
+        if door == 17 && area2 == -1 {
+            area2 = 18;
+        }
+
         if area1 < NUMAREAS && area2 < NUMAREAS {
             w3d.wl_act1.areaconnect[area1 as usize][area2 as usize] -= 1;
             w3d.wl_act1.areaconnect[area2 as usize][area1 as usize] -= 1;
 
-            //player=ob.objlist[0]:
             if ob.objlist[0].areanumber < NUMAREAS {
                 ConnectAreas(w3d, ob);
             }
@@ -1101,9 +1103,9 @@ pub fn PushWall(w3d: &mut modules, ob: &mut object, checkx: i32, checky: i32, di
     w3d.wl_play.tilemap[(w3d.wl_act1.pwallx + dx) as usize][(w3d.wl_act1.pwally + dy) as usize] =
         BIT_WALL;
 
-    //MAPSPOT(pwallx,pwally,1) = 0;   // remove P tile info
+    // remove P tile info
     w3d.id_ca.mapsegs[1][((w3d.wl_act1.pwally << MAPSHIFT) + w3d.wl_act1.pwallx) as usize] = 0;
-    //MAPSPOT(pwallx,pwally,0) = MAPSPOT(player->tilex,player->tiley,0); // set correct floorcode (BrotherTank's fix) TODO: use a better method...
+    // set correct floorcode (BrotherTank's fix) TODO: use a better method...
     w3d.id_ca.mapsegs[0][((w3d.wl_act1.pwally << MAPSHIFT) + w3d.wl_act1.pwallx) as usize] =
         w3d.id_ca.mapsegs[0][((ob.objlist[0].tiley << MAPSHIFT) + ob.objlist[0].tilex) as usize];
 
@@ -1135,13 +1137,11 @@ pub fn MovePWalls(w3d: &mut modules, ob: &mut object) {
     if w3d.wl_act1.pwallstate / 128 != oldblock {
         // block crossed into a new block
         oldtile = w3d.wl_act1.pwalltile;
-
         //
         // the tile can now be walked into
         //
         w3d.wl_play.tilemap[w3d.wl_act1.pwallx as usize][w3d.wl_act1.pwally as usize] = 0;
         ob.actorat[w3d.wl_act1.pwallx as usize][w3d.wl_act1.pwally as usize] = 0 as *mut objtype;
-        //MAPSPOT(w3d.wl_act1.pwallx, w3d.wl_act1.pwally, 0) = ob.objlist[0].areanumber + AREATILE; // TODO: this is unnecessary, and makes a mess of mapsegs
 
         let dx = w3d.wl_act1.dirs[w3d.wl_act1.pwalldir as usize][0] as i32;
         let dy = w3d.wl_act1.dirs[w3d.wl_act1.pwalldir as usize][1] as i32;
