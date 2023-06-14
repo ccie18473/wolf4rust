@@ -1173,49 +1173,42 @@ pub fn DrawHighScores(w3d: &mut modules) {
     }
 
     for i in 0..MaxScores {
-        let name = w3d.id_us.Scores[i].name.clone();
+        let name = &w3d.id_us.Scores[i].name;
         let completed = w3d.id_us.Scores[i].completed;
         let score = w3d.id_us.Scores[i].score;
+        let episode = w3d.id_us.Scores[i].episode;
 
         w3d.id_us.PrintY = 76 + (16 * i as i32);
 
         //
         // name
         //
-        {
-            w3d.id_us.PrintX = 4 * 8;
-        }
+        w3d.id_us.PrintX = 4 * 8;
 
-        US_Print(w3d, name);
+        US_Print(w3d, name.clone());
 
         //
         // level
         //
-        let buffer = completed.to_string().clone();
+        let buffer1 = (episode + 1).to_string();
+        let buffer2 = completed.to_string();
+        let mut buffer = "E".to_string();
+        buffer.push_str(&buffer1);
+        buffer.push_str("/L");
+        buffer.push_str(&buffer2);
 
-        {
-            //for (str = buffer; *str; str++) {
-            //    *str = *str + (129 - '0');  // Used fixed-width numbers (129...)
-            //}
+        USL_MeasureString(w3d, buffer.clone(), &mut w, &mut h);
+        w3d.id_us.PrintX = (24 * 8) - w;
 
-            USL_MeasureString(w3d, buffer, &mut w, &mut h);
-            w3d.id_us.PrintX = (22 * 8) - w;
-        }
-
-        let buffer = completed.to_string().clone();
         US_Print(w3d, buffer);
-
         //
         // score
         //
-        let buffer = score.to_string().clone();
+        let buffer = score.to_string();
 
-        {
-            USL_MeasureString(w3d, buffer, &mut w, &mut h);
-            w3d.id_us.PrintX = (34 * 8) - 8 - w;
-        }
+        USL_MeasureString(w3d, buffer.clone(), &mut w, &mut h);
+        w3d.id_us.PrintX = (34 * 8) - 8 - w;
 
-        let buffer = score.to_string().clone();
         US_Print(w3d, buffer);
     }
     VW_UpdateScreen(w3d);
