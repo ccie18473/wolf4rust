@@ -1198,7 +1198,7 @@ pub fn DrawHighScores(w3d: &mut modules) {
         buffer.push_str(&buffer2);
 
         USL_MeasureString(w3d, buffer.clone(), &mut w, &mut h);
-        w3d.id_us.PrintX = (24 * 8) - w;
+        w3d.id_us.PrintX = 20 * 8;
 
         US_Print(w3d, buffer);
         //
