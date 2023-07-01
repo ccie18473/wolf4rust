@@ -96,44 +96,43 @@ mod wl_scale;
 mod wl_state;
 mod wl_text;
 mod wl_utils;
+
 /////////////////////////////////
-mod prelude {
-    pub use crate::audiowl6::*;
-    pub use crate::foreign::*;
-    #[cfg(feature = "UPLOAD")]
-    pub use crate::gfxv_apo::*;
-    #[cfg(feature = "GOODTIMES")]
-    pub use crate::gfxv_wl6::*;
-    pub use crate::sdl_wrap::*;
-    pub use crate::signon::*;
-    pub use crate::wolfpal::*;
 
-    pub use crate::id_ca::*;
-    pub use crate::id_in::*;
-    pub use crate::id_pm::*;
-    pub use crate::id_sd::*;
-    pub use crate::id_us::*;
-    pub use crate::id_vh::*;
-    pub use crate::id_vl::*;
+pub use crate::audiowl6::*;
+pub use crate::foreign::*;
+#[cfg(feature = "UPLOAD")]
+pub use crate::gfxv_apo::*;
+#[cfg(feature = "GOODTIMES")]
+pub use crate::gfxv_wl6::*;
+pub use crate::sdl_wrap::*;
+pub use crate::signon::*;
+pub use crate::wolfpal::*;
 
-    pub use crate::wl_act1::*;
-    pub use crate::wl_act2::*;
-    pub use crate::wl_agent::*;
-    pub use crate::wl_debug::*;
-    pub use crate::wl_def::*;
-    pub use crate::wl_draw::*;
-    pub use crate::wl_game::*;
-    pub use crate::wl_inter::*;
-    pub use crate::wl_main::*;
-    pub use crate::wl_menu::*;
-    pub use crate::wl_play::*;
-    pub use crate::wl_scale::*;
-    pub use crate::wl_state::*;
-    pub use crate::wl_text::*;
-    pub use crate::wl_utils::*;
-}
+pub use crate::id_ca::*;
+pub use crate::id_in::*;
+pub use crate::id_pm::*;
+pub use crate::id_sd::*;
+pub use crate::id_us::*;
+pub use crate::id_vh::*;
+pub use crate::id_vl::*;
 
-use prelude::*;
+pub use crate::wl_act1::*;
+pub use crate::wl_act2::*;
+pub use crate::wl_agent::*;
+pub use crate::wl_debug::*;
+pub use crate::wl_def::*;
+pub use crate::wl_draw::*;
+pub use crate::wl_game::*;
+pub use crate::wl_inter::*;
+pub use crate::wl_main::*;
+pub use crate::wl_menu::*;
+pub use crate::wl_play::*;
+pub use crate::wl_scale::*;
+pub use crate::wl_state::*;
+pub use crate::wl_text::*;
+pub use crate::wl_utils::*;
+
 /////////////////////////////////
 
 pub struct modules<'a> {
